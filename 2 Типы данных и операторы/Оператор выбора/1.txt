@@ -1,0 +1,55 @@
+Целые типы (byte, short, int, char). Пример:
+int value = 1;
+switch (value) {
+    case 1:
+        System.out.println("Value is 1");
+        break;
+    case 2:
+        System.out.println("Value is 2");
+        break;
+    default:
+        System.out.println("Default case");
+}
+
+Перечисления (enum): Пример:
+enum Day {
+    MONDAY, TUESDAY, WEDNESDAY;
+}
+
+Day day = Day.MONDAY;
+switch (day) {
+    case MONDAY:
+        System.out.println("It's Monday");
+        break;
+    case TUESDAY:
+        System.out.println("It's Tuesday");
+        break;
+    default:
+        System.out.println("Default case");
+}
+
+Строки (String): Начиная с Java 7 можно использовать строки в switch:
+String value = "apple";
+switch (value) {
+    case "apple":
+        System.out.println("It's an apple");
+        break;
+    case "banana":
+        System.out.println("It's a banana");
+        break;
+    default:
+        System.out.println("Unknown fruit");
+}
+
+Типы-обёртки для целых чисел (Byte, Short, Integer, Character): Пример:
+Integer value = 10;
+switch (value) {
+    case 5:
+        System.out.println("Value is 5");
+        break;
+    case 10:
+        System.out.println("Value is 10");
+        break;
+    default:
+        System.out.println("Default case");
+}
