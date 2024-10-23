@@ -1,0 +1,66 @@
+1. @Override
+Назначение: Эта аннотация используется для обозначения того, что метод переопределяет метод суперкласса. Если метод не переопределяет метод суперкласса, компилятор выдаст ошибку. Это помогает избежать ошибок, например, когда имя метода или его параметры были написаны неправильно.
+Пример использования:
+class Parent {
+    void display() {
+        System.out.println("Parent class");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void display() {
+        System.out.println("Child class");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Child child = new Child();
+        child.display(); // Выведет: Child class
+    }
+}
+
+2. @Deprecated
+Назначение: Эта аннотация указывает, что метод, класс или поле устарели и не рекомендуется к использованию. Обычно это означает, что есть более новая или лучшая альтернатива. При использовании устаревшего элемента компилятор выдаст предупреждение.
+Пример использования:
+class Example {
+    @Deprecated
+    void oldMethod() {
+        System.out.println("This is an old method.");
+    }
+
+    void newMethod() {
+        System.out.println("This is a new method.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example example = new Example();
+        example.oldMethod(); // Выдаст предупреждение: 'oldMethod()' is deprecated
+    }
+}
+
+3. @SuppressWarnings
+Назначение: Эта аннотация используется для подавления предупреждений компилятора, например, о неиспользуемых переменных или других проблемах, которые вы знаете, но хотите игнорировать. Это может быть полезно, когда вы хотите предотвратить шум в логах предупреждений.
+Пример использования:
+class Example {
+    @SuppressWarnings("deprecation")
+    void useDeprecated() {
+        Example ex = new Example();
+        ex.oldMethod(); // Предупреждение о том, что oldMethod устарел, будет подавлено
+    }
+
+    @Deprecated
+    void oldMethod() {
+        System.out.println("This method is deprecated.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example example = new Example();
+        example.useDeprecated(); // Предупреждение не будет выдано
+    }
+}
